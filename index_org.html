@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Microsoft 365 Copilot Business — Editorial Landing</title>
+<meta name="description" content="Bring AI into everyday work with Microsoft 365 Copilot Business. One, simplified solution for SMBs—built-in security and productivity with AI." />
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#161616;
+    --muted:#5b5b66;
+    --border:#e7e8ef;
+    --azure:#2563eb;
+    --indigo:#6b5bd6;
+    --magenta:#e85aad;
+    --cyan:#11b5e4;
+    --green:#10b981;
+    --surface:#fafbff;
+    --pill:#f3f5ff;
+    --max:1360px;
+    --radius:14px;
+    --shadow:0 8px 28px rgba(16,24,40,.06), 0 2px 10px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:var(--indigo);text-decoration:none}
+  a:focus{outline:3px solid rgba(37,99,235,.35);outline-offset:2px;border-radius:8px}
+  .wrap{max-width:var(--max);margin:auto;padding:0 28px}
+
+  /* NAV */
+  .topnav{
+    position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);
+    backdrop-filter:saturate(180%) blur(6px);
+  }
+  .topnav .bar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#1d2433}
+  .brand .logo{width:28px;height:28px;border-radius:6px;
+    background:linear-gradient(135deg, var(--azure), var(--indigo) 60%, var(--magenta));
+  }
+  .navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .navlinks a{color:#2b2f36;font-weight:600}
+  .navlinks .cta{margin-left:8px}
+  .btn{
+    padding:10px 14px;border-radius:10px;font-weight:800;display:inline-block;border:1px solid transparent;box-shadow:var(--shadow);
+  }
+  .btn.primary{
+    background:linear-gradient(90deg, var(--azure), var(--indigo) 60%, var(--magenta));color:#fff;
+  }
+  .btn.secondary{background:#fff;border-color:var(--azure);color:var(--azure)}
+  @media (max-width:820px){.navlinks a.hide-sm{display:none}}
+
+  /* HERO */
+  header.hero{
+    background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(232,90,173,.12), transparent 60%),
+      linear-gradient(135deg, rgba(37,99,235,.12), rgba(107,91,214,.10) 45%, rgba(232,90,173,.10));
+    border-bottom:1px solid var(--border);
+  }
+  .hero .inner{padding:92px 0;display:grid;gap:22px;grid-template-columns:1.05fr .95fr;align-items:center}
+  @media (max-width:1024px){.hero .inner{grid-template-columns:1fr;padding:64px 0}}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(90deg,#eef3ff,#fdf2f7);
+    border:1px solid var(--border);padding:10px 14px;border-radius:999px;font-weight:700;color:#2b2f36;width:max-content;
+  }
+  h1{font-size:46px;line-height:1.12;margin:10px 0 12px}
+  p.lead{font-size:19px;color:var(--muted);max-width:720px;margin:0}
+  .cta-hero{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-art{border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow);padding:14px}
+
+  /* SECTIONS */
+  section{padding:60px 0;border-top:1px solid var(--border)}
+  section.alt{background:var(--surface)}
+  h2{font-size:32px;margin:0 0 14px}
+  p.intro{color:var(--muted);max-width:840px}
+  .grid{display:grid;gap:22px}
+  .cols-2{grid-template-columns:1.1fr .9fr}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:1100px){.cols-3,.cols-4{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:780px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
+  .card{position:relative;border:1px solid var(--border);border-radius:14px;background:#fff;padding:20px;box-shadow:var(--shadow)}
+  .card h3{margin:0 0 8px;font-size:22px}
+  .card p{margin:0;color:var(--muted)}
+  .divider{
+    height:1px;background-image:linear-gradient(90deg, transparent, rgba(37,99,235,.35), rgba(232,90,173,.35), transparent);
+    margin:24px 0 18px;border:none;
+  }
+  .band{
+    background:linear-gradient(90deg, rgba(37,99,235,.08), rgba(107,91,214,.08), rgba(232,90,173,.08));
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:44px 0;
+  }
+  .ph{
+    position:relative;overflow:hidden;border:1px dashed #d6d8e6;border-radius:16px;
+    background:
+      linear-gradient(120deg, rgba(37,99,235,.10), rgba(107,91,214,.10) 50%, rgba(232,90,173,.10)),
+      repeating-linear-gradient(0deg, transparent 0 10px, rgba(37,99,235,.06) 10px 11px);
+    aspect-ratio:16/9;
+  }
+  .ph.tall{aspect-ratio:3/4}.ph.wide{aspect-ratio:21/9}.ph.square{aspect-ratio:1/1}
+  .ph[data-label]::after{
+    content:attr(data-label);position:absolute;left:12px;bottom:12px;background:rgba(22,22,22,.75);color:#fff;
+    padding:6px 10px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.2px;
+  }
+  .quote{border-left:4px solid var(--indigo);padding:2px 0 2px 16px;margin:0;color:var(--ink);font-size:20px;line-height:1.45}
+  .attribution{color:var(--muted);margin-top:8px;font-weight:600}
+  .faq details{border-top:1px solid var(--border);padding:14px 0}
+  .faq summary{font-weight:800;cursor:pointer}
+  .faq p{color:var(--muted);margin:10px 0 0}
+  footer{padding:68px 0;border-top:1px solid var(--border);text-align:center}
+  footer h2{font-size:32px;margin:0 0 12px}
+
+  /* PRICING */
+  .pricing-card{display:flex;flex-direction:column;gap:12px;padding:22px}
+  .pricing-card .ribbon{
+    position:absolute;top:14px;left:-8px;background:linear-gradient(90deg,var(--azure),var(--indigo));
+    color:#fff;font-weight:800;font-size:12px;letter-spacing:.3px;padding:6px 12px;border-top-right-radius:999px;border-bottom-right-radius:999px;
+    box-shadow:0 4px 14px rgba(37,99,235,.28);
+  }
+  .pricing-card .price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .pricing-card .price{font-size:30px;font-weight:900;color:#111827}
+  .pricing-card .per{color:var(--muted);font-weight:600}
+  .pricing-card .was{color:#9aa3b2;text-decoration:line-through;font-weight:700}
+  .pricing-card ul{margin:8px 0 0 18px;color:var(--muted)}
+  .tagline{color:#374151;font-weight:700}
+
+  /* BADGES (site-wide reusable) */
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:12px;line-height:1;
+    padding:6px 10px;border-radius:999px;border:1px solid transparent;
+    user-select:none;width:max-content;
+  }
+  .badge-promo{
+    background:#ecfdf5;border-color:#d1fae5;color:#065f46;
+  }
+  .badge-new{
+    background:linear-gradient(90deg,#eef3ff,#f3e8ff);border-color:#e5e7ff;color:#3730a3;
+  }
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
+
+  /* Additional Services */
+  .svc{display:flex;flex-direction:column;gap:8px}
+  .svc .name{font-weight:800}
+  .svc .meta{color:var(--muted)}
+  .svc .svc-cta{margin-top:8px}
+
+  /* ===== Carousel (Moments) ===== */
+  .carousel{
+    position:relative;
+  }
+  .carousel-track{
+    display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding:6px 6px 12px; /* bottom pad so shadow not clipped */
+    -webkit-overflow-scrolling:touch;
+  }
+  .carousel-track::-webkit-scrollbar{height:10px}
+  .carousel-track::-webkit-scrollbar-thumb{background:#d9dcef;border-radius:999px}
+  .carousel-track::-webkit-scrollbar-track{background:#f3f4fb}
+  .slide{
+    flex:0 0 86%;
+    scroll-snap-align:center;
+  }
+  /* Use the same card look for slides */
+  .slide .card{height:100%}
+
+  @media (min-width:700px){
+    .slide{flex-basis:48%} /* 2 per view */
+  }
+  @media (min-width:1100px){
+    .slide{flex-basis:23.6%} /* ~4 per view */
+  }
+
+  .car-btn{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--border);background:#fff;color:#1f2937;
+    display:grid;place-items:center;box-shadow:var(--shadow);cursor:pointer;
+  }
+  .car-btn:hover{background:#f8f9ff}
+  .car-btn[disabled]{opacity:.45;cursor:not-allowed}
+  .car-prev{left:-4px}
+  .car-next{right:-4px}
+
+  .car-dots{
+    display:flex;gap:8px;justify-content:center;margin-top:14px;align-items:center;flex-wrap:wrap;
+  }
+  .car-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:#d1d5db;border:none;cursor:pointer;
+  }
+  .car-dot[aria-selected="true"]{background:linear-gradient(90deg,var(--azure),var(--magenta))}
+
+  ul, ol {
+    margin: 0;       /* Removes outer spacing */
+    padding-left: 5; /* Removes inner indentation */
+}
+</style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="topnav" role="navigation" aria-label="Primary">
+    <div class="wrap bar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Partner Logo</span>
+      </div>
+      <div class="navlinks">
+        <a class="hide-sm" href="#why">Why Copilot</a>
+        <a class="hide-sm" href="#moments">What it does</a>
+        <a class="hide-sm" href="#options">Choose your path</a>
+        <a class="hide-sm" href="#security">Security</a>
+        <a class="hide-sm" href="#faqs">FAQs</a>
+        <a class="btn secondary" href="#compare">Compare options</a>
+        <a class="btn primary cta" href="#options">Upgrade now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap inner">
+      <div>
+        <span class="pill">Microsoft 365 Copilot Business</span>
+        <h1>AI that works like you do.<br>
+Built into the apps your business runs on.</h1>
+        <p class="lead">Bring AI into everyday work with Microsoft 365 Copilot Business.  Integrated with your existing security, privacy, and compliance settings. All-in-one solution in a single, easy-to-navigate experience.</p>
+        <div class="cta-hero">
+          <a class="btn primary" href="#options">Upgrade now</a>
+          <a class="btn secondary" href="#moments">See Copilot in action</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <figure class="ph wide" data-label="HERO — SMB team collaborating (1920×900)"></figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHY SMBs NEED A NEW APPROACH -->
+  <section class="wrap" id="why">
+    <br><h2>Lead the way. Set a new standard for your business.</h2>
+    
+    <div class="grid cols-2">
+      <div>
+        <p>The most successful businesses aren’t just keeping up—they’re setting the pace. With Microsoft 365 Copilot Business, AI becomes your team’s edge, freeing you to innovate, delight customers, and grow with confidence.<p> Make AI the new standard for productivity. With Copilot and Microsoft 365, you streamline workflows, reduce context switching, and help every employee move faster—with guardrails your business can trust.</p>
+        <ul>
+          <li>Consolidate tools into one, simplified solution</li>
+          <li>Draft, summarize, and analyze across familiar apps</li>
+          <li>Adopt AI safely with built‑in security and permissions</li>
+        </ul>
+      </div>
+      <div aria-hidden="true">
+        <figure class="ph" data-label="Infographic / stat visual (1200×675)"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY-IN-THE-LIFE (CAROUSEL) -->
+  <section class="wrap" id="moments" aria-label="How Copilot helps your team every day">
+    <br><h2>How Copilot helps your team every day</h2>
+    <p class="intro">From inbox to insights, Copilot is your always‑on assistant—grounded in your work data and ready to help every role move faster.</p>
+    <hr class="divider" />
+
+    <div class="carousel" id="moments-carousel">
+      <button class="car-btn car-prev" aria-label="Previous slide" data-action="prev">
+        &#10094;
+      </button>
+
+      <div class="carousel-track" id="moments-track" role="listbox" aria-label="Copilot moments">
+        <div class="slide" role="option" aria-selected="true" id="slide-1">
+          <div class="card">
+            <figure class="ph square" data-label="Email follow‑ups (1024×1024)"></figure>
+            <h3>Cut through the clutter</h3>
+            <p>Draft responses and summarize threads in seconds—stay on top of customer conversations.</p>
+          </div>
+        </div>
+
+        <div class="slide" role="option" aria-selected="false" id="slide-2">
+          <div class="card">
+            <figure class="ph square" data-label="Docs &amp; presentations (1024×1024)"></figure>
+            <h3>Ideas perfected</h3>
+            <p>Create first drafts, rewrite, and polish those client proposals.</p>
+          </div>
+        </div>
+
+        <div class="slide" role="option" aria-selected="false" id="slide-3">
+          <div class="card">
+            <figure class="ph square" data-label="Data insights (1024×1024)"></figure>
+            <h3>From data to decisions</h3>
+            <p>Turn spreadsheets into clear summaries and scenarios to guide decisions.</p>
+          </div>
+        </div>
+
+        <div class="slide" role="option" aria-selected="false" id="slide-4">
+          <div class="card">
+            <figure class="ph square" data-label="Team alignment (1024×1024)"></figure>
+            <h3>Stay in the know</h3>
+            <p>Catch up fast—pull context from files, chats, and meetings in the Copilot app.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="car-btn car-next" aria-label="Next slide" data-action="next">
+        &#10095;
+      </button>
+
+      <div class="car-dots" role="tablist" aria-label="Slide indicators">
+        <button class="car-dot" role="tab" aria-controls="slide-1" aria-selected="true"></button>
+        <button class="car-dot" role="tab" aria-controls="slide-2" aria-selected="false"></button>
+        <button class="car-dot" role="tab" aria-controls="slide-3" aria-selected="false"></button>
+        <button class="car-dot" role="tab" aria-controls="slide-4" aria-selected="false"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE YOUR PATH (PRICING WITH PROMO BADGES) -->
+  <section class="alt" id="options">
+    <div class="wrap">
+      <h2>Choose your path to AI‑powered productivity</h2>
+      <p class="intro">Bring Copilot to your business the way that fits best. With the Microsoft 365 and Copilot Business, together you have one solution that unifies productivity, AI, and security for your needs.</p>
+      <hr class="divider" />
+      <!-- Anchor target for nav "Compare options" -->
+      <div id="compare"></div>
+
+      <div class="grid cols-3">
+
+        <!-- Option 1 — Most Popular -->
+        <div class="card pricing-card" data-currency="$" data-now="XX.XX" data-promo="15">
+         <br> <h3>Microsoft 365 Copilot Business + Business Standard </h3>
+          <p class="tagline">Microsoft 365 desktop apps and cloud services, now with built‑in AI.</p>
+
+          <div class="price-row" aria-live="polite">
+            <div class="price"><span data-currency-symbol>$</span><span class="js-now">22.00</span></div>
+            <div class="per">user/month</div>
+            <span class="badge badge-promo" title="Promotional discount">
+              <span class="percent">35%</span> OFF
+            </span>
+            <div class="was">Was <span data-currency-symbol>$</span><span class="js-was">33.50</span></div>
+          </div>
+
+          <ul>
+            <li><b>Create faster.</b> Use Copilot to write, rewrite, summarize, and build content across Word, Excel, PowerPoint, Outlook, and Teams—on desktop, web, and mobile. </li>
+<li><b>Keep work flowing.</b> The Copilot app unifies chat, search, apps, and agents so teams can find, create, and act from one place. 
+<li><b>Stay secure everywhere.</b> Copilot uses Microsoft 365’s built-in protections like encryption and multi-factor sign-in to keep your data safe online and in app.
+</li>
+          </ul>
+          <!-- No plan-specific buttons -->
+        </div>
+
+        <!-- Option 2 -->
+        <div class="card pricing-card" data-currency="$" data-now="XX.XX" data-promo="15">
+                           <span class="ribbon" aria-label="Most popular">Most Popular</span>
+
+         <br><h3>Microsoft 365 Copilot Business + Business Premium</h3>
+          <p class="tagline">AI-powered productivity and advanced security in one comprehensive solution.​</p>
+
+          <div class="price-row" aria-live="polite">
+            <div class="price"><span data-currency-symbol>$</span><span class="js-now">32.00</span></div>
+            <div class="per">user/month</div>
+            <span class="badge badge-promo" title="Promotional discount">
+              <span class="percent">25%</span> OFF
+            </span>
+            <div class="was">Was <span data-currency-symbol>$</span><span class="js-was">43.00</span></div>
+          </div>
+
+          <ul>
+            <li><b>Stronger Safeguards.</b> Pair Copilot with Business Premium’s advanced security and device management so sensitive work stays protected.</li>
+<li><b>Automate Busywork</b> . Let Copilot recap meetings, draft responses, and transform files into usable outputs, so your team can focus on customers.
+
+<li><b>One Platform, fewer Vendors.</b> Consolidate tools, reduce toggling, and get built‑in security to minimize your administrative load.
+</li>
+          </ul>
+          <!-- No plan-specific buttons -->
+        </div>
+
+        <!-- Option 3 -->
+        <div class="card pricing-card" data-currency="$" data-now="XX.XX" data-promo="15">
+          <br><h3>Microsoft 365 Copilot Business + Business Premium + Purview</h3>
+          <p class="tagline">AI‑powered productivity plus enhanced data protection and compliance.</p>
+
+          <div class="price-row" aria-live="polite">
+            <div class="price"><span data-currency-symbol>$</span><span class="js-now">37.00</span></div>
+            <div class="per">user/month</div>
+            <span class="badge badge-promo" title="Promotional discount">
+              <span class="percent">30%</span> OFF
+            </span>
+            <div class="was">Was <span data-currency-symbol>$</span><span class="js-was">53.00</span></div>
+          </div>
+
+          <ul>
+<li><b>AI that works where you work:</b> Save time, reduce busy work, and focus on what matters most. </li>
+<li><b>Data Security made simple:</b> Purview helps you safeguard sensitive data, meet regulatory requirements, and manage risk effortlessly. </li>
+<li><b>One integrated experience:</b> Security, compliance, and productivity—all from Microsoft. </li>
+          </ul>
+          <!-- No plan-specific buttons -->
+        </div>
+      </div>
+
+      <!-- Global CTAs -->
+      <div class="cta" style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn primary" href="#options">Upgrade now</a>
+        <a class="btn secondary" href="#faqs">Compare options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY & TRUST -->
+  <section class="band" id="security">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div>
+          <h2>Security built in—so you can scale with confidence</h2>
+          <p class="intro">Copilot respects your existing Microsoft 365 security, privacy, and compliance settings. It shows only what each user is permitted to access—and your data isn’t used to train foundation models.</p>
+          <ul>
+            <li>Adopt AI safely with existing controls</li>
+            <li>Reduce oversharing; keep data governed</li>
+            <li>Peace of mind as your business grows</li>
+          </ul>
+        </div>
+        <div aria-hidden="true">
+          <figure class="ph" data-label="Security &amp; compliance visual (1200×1600)"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL SERVICES (UPDATED) -->
+  <section class="wrap" id="additional-services" aria-labelledby="svc-heading">
+   <br> <h2 id="svc-heading">Additional services</h2>
+    <p class="intro">Extend your solution with Copilot (standalone) and enterprise‑grade security &amp; compliance suites for SMBs.</p>
+    <hr class="divider" />
+
+    <div class="grid cols-4">
+      <!-- Copilot Business standalone -->
+      <div class="card svc">
+        <h3 class="name">Microsoft 365 Copilot Business (Add-on)</h3>
+        <p class="meta">Add AI to eligible Microsoft 365 plans.</p>
+        <div class="price-row" aria-live="polite">
+          <div class="price">$<span>18.00</span></div><div class="per">user/month</div>
+          <div class="promo"><span>Intro offer</span></div>
+        </div>
+        <ul>
+          <li>Works in Word, Excel, PowerPoint, Outlook, Teams</li>
+          <li>Respects existing permissions &amp; controls</li>
+        </ul>
+      </div>
+
+      <!-- Microsoft Defender Suite -->
+      <div class="card svc">
+        <h3 class="name">Microsoft Defender Suite (Add-on)</h3>
+        <p class="meta">Enterprise‑grade security solution for SMBs.</p>
+        <div class="price-row">
+          <div class="price">$<span>10</span></div><div class="per">user/month</div>
+        </div>
+        <ul>
+          <li>Entra ID P2</li>
+          <li>Defender for Identity</li>
+          <li>Microsoft Defender for Office (MDO) P2</li>
+          <li>Microsoft Defender for Endpoint (MDE) P2</li>
+          <li>Defender for Cloud Apps</li>
+        </ul>
+      </div>
+
+      <!-- Microsoft Purview Suite -->
+      <div class="card svc">
+        <h3 class="name">Microsoft Purview Suite (Add-on)</h3>
+        <p class="meta">Comprehensive data governance &amp; compliance.</p>
+        <div class="price-row">
+          <div class="price">$<span>10</span></div><div class="per">user/month</div>
+        </div>
+        <ul>
+          <li>Information protection</li>
+          <li>Data Loss Prevention (DLP)</li>
+          <li>Data lifecycle management</li>
+          <li>Insider Risk Management</li>
+          <li>eDiscovery &amp; Audit (Premium)</li>
+        </ul>
+      </div>
+
+      <!-- Defender + Purview Suite -->
+      <div class="card svc">
+        <h3 class="name">Microsoft Defender and Purview Suite (Add-on)</h3>
+        <p class="meta">Unified protection, compliance, and operational efficiency.</p>
+        <div class="price-row">
+          <div class="price">$<span>15</span></div><div class="per">user/month</div>
+        </div>
+        <ul>
+          <li>End‑to‑end protection</li>
+          <li>Integrated signals</li>
+          <li>Adaptive policies</li>
+          <li>Compliance &amp; threat intelligence</li>
+          <li>Operational efficiency</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap faq" id="faqs">
+    <h2>FAQs</h2>
+    <hr class="divider" />
+    <details>
+      <summary>Who qualifies for Microsoft 365 Copilot Business?</summary>
+      <p>Customers on Microsoft 365 Business Basic, Standard, or Premium are eligible to add Copilot Business.</p>
+    </details>
+    <details>
+      <summary>What’s the difference between these bundles?</summary>
+      <p>Each bundle unifies Microsoft 365 with Copilot; the Purview Suite option adds enhanced data protection and compliance capabilities.</p>
+    </details>
+    <details>
+      <summary>How does Copilot protect our data?</summary>
+      <p>Copilot honors your current permissions and compliance settings and doesn’t use your data to train foundation models.</p>
+    </details>
+  </section>
+
+  <!-- FINAL CTA -->
+  <footer>
+    <h2>Ready to bring AI into everyday work?</h2>
+    <p class="intro">Choose the plan that fits your business and unlock Copilot for your team.</p>
+    <div style="margin-top:14px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn primary" href="#options">Get started</a>
+      <a class="btn secondary" href="#options">Review pricing</a>
+    </div>
+  </footer>
+
+  <!-- Optional: auto-calc “Was $” from % off -->
+  <script>
+    (function(){
+      function fmt(n){ return (Math.round(n * 100) / 100).toFixed(2); }
+      document.querySelectorAll('.pricing-card, .svc').forEach(card=>{
+        const curr = card.getAttribute('data-currency') || '$';
+        card.querySelectorAll('[data-currency-symbol]').forEach(el=> el.textContent = curr);
+
+        const nowAttr = card.getAttribute('data-now');
+        const wasAttr = card.getAttribute('data-was');
+        const promoAttr = card.getAttribute('data-promo');
+
+        const nowEl = card.querySelector('.js-now');
+        const wasEl = card.querySelector('.js-was');
+        const percentEl = card.querySelector('.badge-promo .percent');
+
+        if (promoAttr && (nowAttr || wasAttr)) {
+          const promo = parseFloat(promoAttr);
+          let now = nowAttr ? parseFloat(nowAttr) : NaN;
+          let was = wasAttr ? parseFloat(wasAttr) : NaN;
+
+          if (!isNaN(now) && isNaN(was)) was = now / (1 - promo/100);
+          if (!isNaN(was) && isNaN(now)) now = was * (1 - promo/100);
+
+          if (nowEl && !isNaN(now)) nowEl.textContent = fmt(now);
+          if (wasEl && !isNaN(was)) wasEl.textContent = fmt(was);
+          if (percentEl) percentEl.textContent = (promo % 1 === 0 ? promo.toFixed(0) : fmt(promo)) + '%';
+        } else {
+          if (nowEl && nowAttr) nowEl.textContent = fmt(parseFloat(nowAttr));
+        }
+      });
+    })();
+  </script>
+
+  <!-- Carousel logic -->
+  <script>
+    (function(){
+      const sec = document.getElementById('moments');
+      const track = document.getElementById('moments-track');
+      const slides = Array.from(track.querySelectorAll('.slide'));
+      const prevBtn = sec.querySelector('[data-action="prev"]');
+      const nextBtn = sec.querySelector('[data-action="next"]');
+      const dots = Array.from(sec.querySelectorAll('.car-dot'));
+
+      function scrollToIndex(i){
+        const clamped = Math.max(0, Math.min(i, slides.length - 1));
+        slides[clamped].scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+      }
+
+      function currentIndex(){
+        let best = 0, bestRatio = 0;
+        const rectTrack = track.getBoundingClientRect();
+        slides.forEach((s, i)=>{
+          const r = s.getBoundingClientRect();
+          const visible = Math.max(0, Math.min(r.right, rectTrack.right) - Math.max(r.left, rectTrack.left));
+          const ratio = visible / r.width;
+          if (ratio > bestRatio){ best = i; bestRatio = ratio; }
+        });
+        return best;
+      }
+
+      function updateState(){
+        const idx = currentIndex();
+        slides.forEach((s,i)=> s.querySelector('[role="option"]').setAttribute('aria-selected', i===idx ? 'true' : 'false'));
+        dots.forEach((d,i)=> d.setAttribute('aria-selected', i===idx ? 'true' : 'false'));
+        prevBtn.disabled = (idx === 0);
+        nextBtn.disabled = (idx >= slides.length - 1);
+      }
+
+      prevBtn.addEventListener('click', ()=> scrollToIndex(currentIndex() - 1));
+      nextBtn.addEventListener('click', ()=> scrollToIndex(currentIndex() + 1));
+      dots.forEach((d,i)=> d.addEventListener('click', ()=> scrollToIndex(i)));
+
+      // Keyboard support when section is focused
+      sec.addEventListener('keydown', (e)=>{
+        if (e.key === 'ArrowLeft') { e.preventDefault(); scrollToIndex(currentIndex() - 1); }
+        if (e.key === 'ArrowRight'){ e.preventDefault(); scrollToIndex(currentIndex() + 1); }
+      });
+
+      // Keep dots/buttons in sync while user drags/swipes/scrolls
+      let rafId = null;
+      track.addEventListener('scroll', ()=>{
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateState);
+      }, {passive:true});
+
+      // Initialize
+      updateState();
+      window.addEventListener('resize', updateState);
+    })();
+  </script>
+</body>
+</html>
