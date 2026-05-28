@@ -1,0 +1,70 @@
+HEADER się chowa
+
+
+main { padding-top: 64px; }
+
+
+CTA
+
+
+.btn-sub{
+  display:block;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: .8;
+  margin-top: 2px;
+}
+
+
+
+ <span class="btn-sub">1 klik • gotowy e‑mail</span
+
+np.
+
+<a class="btn btn-primary"
+   href="mailto:...">
+  Zapytaj o dostępność
+  <span class="btn-sub">1 klik • gotowy e‑mail</span>
+</a>
+
+
+
+lOGO Z GUZIKIEM
+
+.company-logo{
+  width:48px;      /* możesz podbić do 56/64 */
+  height:48px;
+  border-radius: 14px;
+  object-fit: contain;
+  flex: 0 0 48px;
+
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+Proszę o wycenę Microsoft Copilot Business
+
+
+
+
+<a class="btn btn-ghost"
+               href="mailto:msp@valcreon.com?subject=Microsoft%20365%20Copilot%20Business%20%E2%80%94%20wycena%20i%20termin&body=Dzie%C5%84%20dobry%2C%0A%0AProsz%C4%99%20o%20wycen%C4%99%20licencji%20Microsoft%20365%20Copilot%20Business%20w%20modelu%20CSP%20oraz%20informacj%C4%99%20o%20czasie%20uruchomienia.%0A%0A---%0ADANE%20DO%20KOPIOWANIA%20(bez%20formularza)%0A%0AFirma%3A%20%0ANIP%3A%20%0AOsoba%20kontaktowa%3A%20%0ATelefon%3A%20%0AE-mail%3A%20%0ALiczba%20u%C5%BCytkownik%C3%B3w%2Flicencji%20Copilot%3A%20%0APosiadany%20plan%20bazowy%20M365%3A%20%0AOkres%20rozliczenia%3A%20%0APreferowana%20data%20startu%3A%20%0AUwagi%2Fcele%20(2%20zdania)%3A%20%0A---%0A%0AJe%C5%9Bli%20wygodniej%2C%20mo%C5%BCna%20um%C3%B3wi%C4%87%20rozmow%C4%99%20tutaj%3A%0Ahttps%3A%2F%2Fbookings.cloud.microsoft%2Fbook%2FRedFlag1%40redflag.com.pl%0A%0ATelefon%3A%20%2B48%2022%20152%2050%2060%0A%0AZ%20g%C3%B3ry%20dzi%C4%99kuj%C4%99%2C%0A">
+              Napisz e‑mail
+            </a>
+
+
+
+<p class="side-title">Dla kogo?</p>
+<p class="side-text">Właściciele firm, którzy chcą wdrożyć AI bez chaosu i bez zmiany tego, co już działa.</p>
+</div>
+
+<div class="side-block">
+  <p class="side-title">Co sprzedajemy?</p>
+  <p class="side-text">AI (Copilot), bezpieczeństwo i kontrolę danych – na bazie Microsoft 365.</p>
+</div>
+
+<div class="side-block">
+  <p class="side-title">Jak zaczynamy?</p>
+  <p class="side-text">Licencje → pilot → zabezpieczenie danych. Najpierw efekt, potem skalowanie.</p>
+</div>
+
