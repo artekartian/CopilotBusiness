@@ -2453,12 +2453,20 @@ body.no-scroll{ overflow: hidden; }
   </div>
 
         <!-- Sub stopka -->
-        <div class="footer-bottom">© 
-                <a href="https://valcreon.com" class="footer-link-clean">
-                Valcreon.com
-                </a>
 
-        </div>
+<div class="footer-bottom">
+  <span>© <span id="current-year"></span> Valcreon Sp. z o.o.</span>
+
+  <a
+    href="https://valcreon.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="footer-link-clean"
+  >
+    Valcreon.com
+  </a>
+</div>
+
         </footer>
 
 
@@ -2642,6 +2650,12 @@ body.no-scroll{ overflow: hidden; }
     });
   })();
 
+
+    
+  const currentYearEl = document.getElementById("current-year");
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
+  }
 
 
   </script>
