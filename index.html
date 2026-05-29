@@ -1396,6 +1396,123 @@ body.no-scroll{ overflow: hidden; }
             </div>
 
             </div>
+
+        <!-- WORK IQ — wariant A responsive -->
+            <style>
+              .wiq{
+                margin-top:2.5rem;
+                display:grid;
+                grid-template-columns:5rem 1fr;
+                border-radius:1rem;
+                border:1px solid rgba(124,77,255,.25);
+                background:linear-gradient(135deg,rgba(124,77,255,.06) 0%,rgba(0,200,255,.04) 100%);
+                overflow:hidden;
+                position:relative;
+              }
+              .wiq-accent{
+                display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;
+                background:linear-gradient(180deg,rgba(124,77,255,.12),rgba(0,200,255,.08));
+                border-right:1px solid rgba(124,77,255,.15);
+                padding:1.5rem .8rem;
+              }
+              .wiq-accent svg{flex-shrink:0;}
+              .wiq-label{
+                writing-mode:vertical-rl;text-orientation:mixed;
+                font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+                background:linear-gradient(180deg,#7c4dff,#00c8ff);
+                -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+              }
+              .wiq-body{padding:2rem 2rem 1.8rem 1.8rem;}
+              .wiq-body h3{margin:0 0 .5rem;}
+              .wiq-body > p{margin:0 0 1rem;opacity:.85;}
+              .wiq-pillars{
+                display:grid;
+                grid-template-columns:repeat(3,1fr);
+                gap:.8rem;
+              }
+              .wiq-pill{
+                padding:.9rem 1rem;border-radius:.7rem;
+              }
+              .wiq-pill strong{display:block;margin-bottom:.3rem;}
+              .wiq-pill span{font-size:.88rem;opacity:.8;}
+              .wiq-pill--a{background:rgba(124,77,255,.07);border:1px solid rgba(124,77,255,.15);}
+              .wiq-pill--b{background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.15);}
+              .wiq-pill--c{background:rgba(124,77,255,.05);border:1px solid rgba(124,77,255,.12);}
+              .wiq-foot{margin:1.8rem 0 0;font-size:.88rem;opacity:.55;padding-top:1.8rem}
+              .wiq-badge-mobile{display:none;}
+            
+              @media(max-width:768px){
+                .wiq{grid-template-columns:1fr;}
+                .wiq-accent{display:none;}
+                .wiq-badge-mobile{
+                  display:inline-flex;align-items:center;gap:.5rem;
+                  margin-bottom:.8rem;
+                }
+                .wiq-badge-mobile svg{width:28px;height:28px;}
+                .wiq-badge-mobile span{
+                  background:linear-gradient(135deg,#7c4dff,#00c8ff);
+                  color:#fff;font-size:.6rem;font-weight:700;
+                  padding:.15rem .55rem;border-radius:999px;
+                  letter-spacing:.08em;text-transform:uppercase;
+                }
+                .wiq-body{padding:1.5rem;}
+                .wiq-pillars{grid-template-columns:1fr;}
+              }
+            </style>
+            
+            <div class="wiq glass">
+            
+              <!-- lewa kolumna - desktop -->
+              <div class="wiq-accent">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#iqA)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <defs><linearGradient id="iqA" x1="0" y1="0" x2="24" y2="24">
+                    <stop offset="0%" stop-color="#7c4dff"/>
+                    <stop offset="100%" stop-color="#00c8ff"/>
+                  </linearGradient></defs>
+                  <path d="M12 2 L14 9 L21 9 L15.5 13.5 L17.5 21 L12 16.5 L6.5 21 L8.5 13.5 L3 9 L10 9Z"/>
+                  <circle cx="12" cy="12" r="3" stroke-width="1" opacity=".5"/>
+                </svg>
+                <span class="wiq-label">nowość</span>
+              </div>
+            
+              <!-- treść -->
+              <div class="wiq-body">
+            
+                <!-- badge + ikona - mobile only -->
+                <div class="wiq-badge-mobile">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#iqA)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="#iqA"/>
+                    <path d="M12 2 L14 9 L21 9 L15.5 13.5 L17.5 21 L12 16.5 L6.5 21 L8.5 13.5 L3 9 L10 9Z"/>
+                    <circle cx="12" cy="12" r="3" stroke-width="1" opacity=".5"/>
+                  </svg>
+                  <span>nowość</span>
+                </div>
+            
+                <h3>Work IQ - Copilot, który rozumie Twoją firmę</h3>
+                <p>Nowa warstwa inteligencji w Microsoft 365 Copilot. Trzy filary, które zmieniają jakość odpowiedzi:</p>
+            
+                <div class="wiq-pillars">
+                  <div class="wiq-pill wiq-pill--a">
+                    <strong>📂 Dane firmowe</strong>
+                    <span>Maile, pliki, spotkania i czaty - szuka tam, gdzie naprawdę jest Twoja wiedza.</span>
+                  </div>
+                  <div class="wiq-pill wiq-pill--b">
+                    <strong>🔄 Pamięć</strong>
+                    <span>Uczy się stylu i kontekstu - każda kolejna odpowiedź jest trafniejsza.</span>
+                  </div>
+                  <div class="wiq-pill wiq-pill--c">
+                    <strong>⚡ Wnioskowanie</strong>
+                    <span>Łączy fakty z różnych źródeł i podpowiada kolejne kroki.</span>
+                  </div>
+                </div>
+            
+                <p class="wiq-foot">
+                  Efekt? Copilot nie odpowiada na ślepo - zna kontekst Twojej firmy i pracuje jak asystent, który jest na bieżąco.
+                </p>
+              </div>
+            </div>
+            <!-- /WORK IQ -->
+          
         </div>
         </section>
 
