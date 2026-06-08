@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -181,15 +180,15 @@
     .feature{
       border-radius:32px;border:1px solid var(--line);background:rgba(255,255,255,.05);padding:24px;
       backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 20px 60px rgba(0,0,0,.28);
-      transition:transform .2s ease;
+      transition:transform .2s ease;min-height:260px;
     }
     .feature:hover{transform:translateY(-4px)}
     .feature-icon{
       width:48px;height:48px;border-radius:18px;display:grid;place-items:center;
       color:#fca5a5;background:linear-gradient(135deg, rgba(239,68,68,.20), rgba(220,38,38,.10));border:1px solid rgba(239,68,68,.20)
     }
-    .feature h3{margin:20px 0 0;font-size:24px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
-    .feature p{margin-top:12px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.68)}
+    .feature h3{margin:20px 0 0;font-size:24px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-top:16px;}
+    .feature p{margin-top:12px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.68);max-width:240px;line-height:1.5;margin-top:8px;}
 
     .section{margin-top:96px}
     .section-heading{text-align:center;max-width:850px;margin:0 auto}
@@ -249,7 +248,7 @@
     .cta-panel{border:1px solid rgba(239,68,68,.20);background:linear-gradient(135deg, rgba(239,68,68,.12), rgba(255,255,255,.03))}
     .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
-    footer{position:relative;z-index:1;border-top:1px solid var(--line);background:rgba(0,0,0,.20);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    footer{position:relative;z-index:1;border-top:1px solid var(--line);background:rgba(0,0,0,.20);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);margin-top: 80px;}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px 24px;max-width:var(--max);margin:0 auto}
     .footer-meta{font-size:14px;line-height:1.8;color:rgba(255,255,255,.62)}
     .footer-meta a{color:inherit}
@@ -289,6 +288,43 @@
       .price-box strong{font-size:44px}
       .svg-shell{padding:10px}
     }
+
+
+    .lft-hero{
+  margin-bottom:10px;
+  padding:24px;
+}
+
+.lft-grid{
+  margin-top:8px;
+  gap:10px;
+}
+
+.card{
+  padding:22px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+
+.brand-icon{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.brand-icon img{
+  width:45px;
+  height:45px;
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -303,11 +339,11 @@
     <header class="container">
       <div class="nav-shell">
         <a href="#start" class="brand">
+
           <div class="brand-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/>
-            </svg>
+            <img src="./logo45.png" alt="RedFlag" />
           </div>
+
           <div class="brand-copy">
             <small>Microsoft 365 • AI • Security</small>
             <strong>Red<span>Flag</span></strong>
@@ -328,10 +364,10 @@
     <main id="start" class="container">
       <section class="hero">
         <div>
-          <div class="pill"><span class="pulse"></span>Oferta dla firm 5–300 użytkowników</div>
+          <div class="pill"><span class="pulse"></span>Oferta dla małych i średnich firm</div>
           <h1>
             Twoi pracownicy już używają AI
-            <span class="gradient">— tylko poza Twoją kontrolą</span>
+            <span class="gradient">– tylko poza kontrolą firmy</span>
           </h1>
           <p class="lead">
             Wdrażamy Microsoft Copilot i bezpieczeństwo jako jedno spójne rozwiązanie.
@@ -359,165 +395,159 @@
             <div class="visual-head">
               <div>
                 <div class="eyebrow">AI Security Matrix</div>
-                <div class="visual-title">Wizualizacja ryzyka i kontroli</div>
+                <div class="visual-title">Od danych do gotowego wyniku</div>
               </div>
               <div class="live">Live</div>
             </div>
 
             <div class="svg-shell">
-              <svg viewBox="0 0 540 540" aria-hidden="true">
-                <defs>
-                  <radialGradient id="glow" cx="50%" cy="50%" r="60%">
-                    <stop offset="0%" stop-color="#ff5858" stop-opacity="0.35" />
-                    <stop offset="55%" stop-color="#ff3030" stop-opacity="0.10" />
-                    <stop offset="100%" stop-color="#ff0000" stop-opacity="0" />
-                  </radialGradient>
-                  <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
-                    <stop offset="100%" stop-color="#ff5c5c" stop-opacity="0.92" />
-                  </linearGradient>
-                  <filter id="softGlow">
-                    <feGaussianBlur stdDeviation="5" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
 
-                <circle cx="270" cy="270" r="215" fill="url(#glow)">
-                  <animate attributeName="opacity" values="0.75;1;0.75" dur="4s" repeatCount="indefinite" />
-                </circle>
+  <!-- linia przepływu -->
+  <line x1="120" y1="100" x2="480" y2="100"
+        stroke="rgba(255,255,255,.15)" stroke-width="2" />
 
-                <circle cx="270" cy="270" r="70" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="6 10"/>
-                <circle cx="270" cy="270" r="120" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="6 10"/>
-                <circle cx="270" cy="270" r="170" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="6 10"/>
-                <circle cx="270" cy="270" r="220" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="6 10"/>
+  <!-- INPUT -->
+  <circle cx="120" cy="100" r="8" fill="#ef4444">
+    <animate attributeName="r" values="8;11;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
 
-                <g transform="rotate(0 270 270)"><line x1="270" y1="50" x2="270" y2="490" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
-                <g transform="rotate(45 270 270)"><line x1="270" y1="50" x2="270" y2="490" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
-                <g transform="rotate(90 270 270)"><line x1="270" y1="50" x2="270" y2="490" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
-                <g transform="rotate(135 270 270)"><line x1="270" y1="50" x2="270" y2="490" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
+  <!-- AI NODE -->
+  <circle cx="300" cy="100" r="28"
+          fill="none"
+          stroke="#ef4444"
+          stroke-width="2"
+          stroke-dasharray="4 6">
+    <animateTransform attributeName="transform"
+                      type="rotate"
+                      from="0 300 100"
+                      to="360 300 100"
+                      dur="12s"
+                      repeatCount="indefinite"/>
+  </circle>
 
-                <g opacity="0.7">
-                  <path d="M270 270 L270 56" stroke="rgba(255,65,65,0.3)" stroke-width="2" />
-                  <path d="M270 270 L461 174" stroke="rgba(255,65,65,0.3)" stroke-width="2" />
-                  <path d="M270 270 L432 403" stroke="rgba(255,65,65,0.3)" stroke-width="2" />
-                  <path d="M270 270 L113 416" stroke="rgba(255,65,65,0.3)" stroke-width="2" />
-                  <path d="M270 270 L78 171" stroke="rgba(255,65,65,0.3)" stroke-width="2" />
-                </g>
+  <!-- OUTPUT -->
+  <circle cx="480" cy="100" r="8" fill="#ef4444">
+    <animate attributeName="r" values="8;11;8" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
 
-                <path d="M270 96 L401 194 L362 365 L180 398 L115 212 Z" fill="rgba(255,58,58,0.18)" stroke="rgba(255,83,83,0.85)" stroke-width="2.2" filter="url(#softGlow)">
-                  <animate attributeName="d" dur="6s" repeatCount="indefinite"
-                    values="M270 96 L401 194 L362 365 L180 398 L115 212 Z;
-                            M270 112 L418 190 L350 352 L191 386 L124 220 Z;
-                            M270 96 L401 194 L362 365 L180 398 L115 212 Z" />
-                </path>
+  <!-- moving dot (data flow) -->
+  <circle cx="120" cy="100" r="4" fill="#ffffff">
+    <animateMotion dur="2.2s" repeatCount="indefinite"
+      path="M120,100 L300,100 L480,100" />
+  </circle>
 
-                <g filter="url(#softGlow)">
-                  <circle cx="270" cy="96" r="5" fill="#ff6868"><animate attributeName="r" values="5;7;5" dur="2.8s" repeatCount="indefinite" /></circle>
-                  <circle cx="401" cy="194" r="5" fill="#ff6868"><animate attributeName="r" values="5;7;5" dur="3.2s" repeatCount="indefinite" /></circle>
-                  <circle cx="362" cy="365" r="5" fill="#ff6868"><animate attributeName="r" values="5;7;5" dur="2.6s" repeatCount="indefinite" /></circle>
-                  <circle cx="180" cy="398" r="5" fill="#ff6868"><animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite" /></circle>
-                  <circle cx="115" cy="212" r="5" fill="#ff6868"><animate attributeName="r" values="5;7;5" dur="2.4s" repeatCount="indefinite" /></circle>
-                </g>
+  <!-- labels -->
+  <text x="120" y="130" text-anchor="middle" font-size="12" fill="#9ca3af">
+    dane
+  </text>
 
-                <g>
-                  <path d="M270 170l65 34v44c0 52-30 89-65 109-35-20-65-57-65-109v-44l65-34z" fill="rgba(8,10,16,.9)" stroke="url(#shieldGradient)" stroke-width="2.4" />
-                  <path d="M243 252l18 18 38-45" fill="none" stroke="url(#shieldGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-                  <circle cx="270" cy="270" r="105" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="2 10">
-                    <animateTransform attributeName="transform" type="rotate" from="0 270 270" to="360 270 270" dur="18s" repeatCount="indefinite" />
-                  </circle>
-                  <path d="M270 270 L452 270" stroke="rgba(255,255,255,0.18)" stroke-width="2">
-                    <animateTransform attributeName="transform" type="rotate" from="0 270 270" to="360 270 270" dur="5s" repeatCount="indefinite" />
-                  </path>
-                </g>
+  <text x="300" y="145" text-anchor="middle" font-size="12" fill="#ef4444">
+    AI
+  </text>
 
-                <g>
-                  <circle cx="125" cy="132" r="7" fill="#0d1018" stroke="#ff5f5f" stroke-width="2.4"><animate attributeName="r" values="7;9;7" dur="3.5s" repeatCount="indefinite" /></circle>
-                  <text x="139" y="136" font-size="14" fill="rgba(255,255,255,.84)" font-family="Inter, sans-serif">MFA</text>
-                </g>
-                <g>
-                  <circle cx="396" cy="120" r="7" fill="#0d1018" stroke="#ff5f5f" stroke-width="2.4"><animate attributeName="r" values="7;9;7" dur="3.5s" repeatCount="indefinite" /></circle>
-                  <text x="410" y="124" font-size="14" fill="rgba(255,255,255,.84)" font-family="Inter, sans-serif">Defender</text>
-                </g>
-                <g>
-                  <circle cx="417" cy="428" r="7" fill="#0d1018" stroke="#ff5f5f" stroke-width="2.4"><animate attributeName="r" values="7;9;7" dur="3.5s" repeatCount="indefinite" /></circle>
-                  <text x="431" y="432" font-size="14" fill="rgba(255,255,255,.84)" font-family="Inter, sans-serif">Backup</text>
-                </g>
-                <g>
-                  <circle cx="98" cy="415" r="7" fill="#0d1018" stroke="#ff5f5f" stroke-width="2.4"><animate attributeName="r" values="7;9;7" dur="3.5s" repeatCount="indefinite" /></circle>
-                  <text x="112" y="419" font-size="14" fill="rgba(255,255,255,.84)" font-family="Inter, sans-serif">Copilot</text>
-                </g>
-                <g>
-                  <circle cx="266" cy="470" r="7" fill="#0d1018" stroke="#ff5f5f" stroke-width="2.4"><animate attributeName="r" values="7;9;7" dur="3.5s" repeatCount="indefinite" /></circle>
-                  <text x="280" y="474" font-size="14" fill="rgba(255,255,255,.84)" font-family="Inter, sans-serif">Access</text>
-                </g>
-              </svg>
+  <text x="480" y="130" text-anchor="middle" font-size="12" fill="#9ca3af">
+    wynik
+  </text>
+
+</svg>
+
             </div>
 
             <div class="status-grid">
               <div class="status-card"><span>Stan początkowy</span><strong>AI bez kontroli</strong></div>
-              <div class="status-card red"><span>Cel wdrożenia</span><strong>AI + Security jako standard</strong></div>
+              <div class="status-card red"><span>Cel wdrożenia</span><strong>AI + Zabezpieczenia</strong></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="problem" class="split">
-        <div class="glass pain">
-          <div class="eyebrow-red">Dlaczego teraz</div>
-          <h2>Największy problem nie polega na tym, że firma nie używa AI.</h2>
-          <p class="desc">
-            Problem polega na tym, że używa go chaotycznie: na prywatnych kontach, poza kontrolą IT i bez żadnego spójnego planu na bezpieczeństwo oraz realny zwrot biznesowy.
-          </p>
-          <div class="red-box">
+     
+  <section id="problem" class="split">
+
+  <!-- LEWA STRONA -->
+  <div class="glass pain">
+
+    <div class="eyebrow-red">Dlaczego teraz</div>
+
+    <h2>
+      Największy problem nie polega na tym, że firma nie używa AI.
+    </h2>
+
+    <p class="desc">
+      Problem polega na tym, że używa go na prywatnych kontach,
+      poza kontrolą i bez spójnego planu zabezpieczeń danych firmowych.
+    </p>
+
+  </div>
+
+  <!-- PRAWA STRONA -->
+  <div class="feature-grid">
+
+    <div class="feature">
+      <div class="feature-icon">
+       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/><path d="M9.5 12.5l1.8 1.8 3.7-4.3"/></svg>
+      </div>
+      <h3>AI pod kontrolą firmy</h3>
+      <p>
+        Copilot działa w firmowym środowisku – bez chaosu i prywatnych kont.
+      </p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h4l2-8 4 14 2-6h4"/></svg>
+      </div>
+      <h3>Efekt, który widać</h3>
+      <p>
+        Szybsze tworzenie treści i mniej pracy ręcznej.
+      </p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h4l2-8 4 14 2-6h4"/></svg>
+      </div>
+      <h3>Security na wysokim poziomie</h3>
+      <p>
+        MFA, Access i backup jako jedno spójne wdrożenie.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 🔥 EFEKT – NA CAŁĄ SZEROKOŚĆ -->
+<div class="container">
+
+  <div class="red-box red-box-wide">
+
+<div class="red-box">
             <div class="label">Efekt?</div>
             <ul>
               <li>• ryzyko wycieku danych poza firmę</li>
               <li>• brak standardu pracy z AI</li>
-              <li>• niska adopcja Microsoft 365 mimo opłacanych licencji</li>
+              <li>• mniej koprzyści z opłacanych licencji Microsoft 365</li>
             </ul>
           </div>
-        </div>
 
-        <div class="feature-grid">
-          <div class="feature">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/><path d="M9.5 12.5l1.8 1.8 3.7-4.3"/></svg>
-            </div>
-            <h3>AI pod kontrolą firmy</h3>
-            <p>Microsoft Copilot wdrożony w bezpiecznym środowisku — bez chaosu, bez prywatnych kont, bez ryzyka przypadkowego wycieku danych.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h4l2-8 4 14 2-6h4"/></svg>
-            </div>
-            <h3>Produktywność, którą widać</h3>
-            <p>Szybsze tworzenie ofert, maili, podsumowań i dokumentów. Mniej pracy ręcznej, więcej czasu na realną sprzedaż i obsługę klientów.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9c0 .66.39 1.26 1 1.55.18.08.38.13.58.13H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.51 1.02z"/></svg>
-            </div>
-            <h3>Bezpieczeństwo gotowe na 2026</h3>
-            <p>MFA, Conditional Access, Defender i backup — jedno spójne wdrożenie, które porządkuje bezpieczeństwo zamiast dokładać kolejne osobne narzędzia.</p>
-          </div>
-        </div>
-      </section>
+</div>
+
 
       <section id="offer" class="section">
         <div class="section-heading">
-          <div class="badge-center">RedFlag • oferta gotowa do sprzedaży</div>
-          <h2>AI + Security Upgrade</h2>
-          <p>Jedna usługa. Jeden prosty komunikat. Jeden konkretny efekt: bezpieczne wdrożenie AI w firmie i większa wartość z Microsoft 365.</p>
+          <div class="badge-center">RedFlag • zabezpieczenie AI w firmie</div>
+          <h2>AI + Zabezpieczenia</h2>
+          <p>Jedno wdrożenie, które porządkuje Microsoft 365 i daje realny efekt biznesowy.</p>
         </div>
 
         <div class="offer-grid">
           <div class="offer-main">
             <div class="chip-row">
               <div class="chip red">Wdrożenie w 30 dni</div>
-              <div class="chip white">Firmy 5–300 użytkowników</div>
+              <div class="chip white">Firmy 3–300 użytkowników</div>
             </div>
             <div class="offer-list">
               <div class="offer-item"><div class="row"><div class="check"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg></div><div><strong>Microsoft Copilot</strong><p>AI w Word, Outlook, Teams i codziennych scenariuszach pracy</p></div></div></div>
@@ -530,14 +560,14 @@
           </div>
 
           <div class="offer-side">
-            <div class="mini-eyebrow">Oferta 1:1</div>
-            <h3>Sprzedajesz efekt, nie licencje</h3>
-            <p>Ta oferta jest zbudowana pod właściciela firmy lub osobę decyzyjną. Nie wymaga tłumaczenia zawiłości technicznych.</p>
+            <div class="mini-eyebrow">Gotowe rozwiązanie dla Twojej firmy</div>
+            <h3>Jedno wdrożenie zamiast wielu decyzji</h3>
+            <p>Bezpiecznie wdrażamy AI i porządkujemy Microsoft 365 – bez skomplikowanych decyzji.</p>
 
             <div class="price-box">
               <span>Cena startowa</span>
               <strong>od 299 zł</strong>
-              <em>/ użytkownik • wdrożenie</em>
+              <em>użytkownik • wdrożenie • miesięcznie</em>
               <small>Finalna wycena zależy od liczby użytkowników, posiadanych licencji i zakresu zabezpieczeń.</small>
             </div>
 
@@ -555,12 +585,62 @@
         </div>
       </section>
 
+<section class="section">
+
+  <div class="process process-alt">
+
+    <div class="section-heading" style="text-align:left;max-width:780px;margin:0;">
+      <div class="eyebrow" style="color:rgba(252,165,165,.85)">
+        Test Microsoft 365 Copilot
+      </div>
+
+      <h2 style="margin-top:12px">
+        30 dni testu bez zobowiązań
+      </h2>
+
+      <p style="margin-top:16px">
+        Sprawdź działanie Copilot w Twojej firmie – bez kosztów i bez zmian w obecnym środowisku.
+      </p>
+
+      <div class="cta-row" style="margin-top:20px">
+        <a href="#kontakt" class="btn btn-primary">
+          Sprawdź kwalifikację
+        </a>
+      </div>
+    </div>
+
+    <div class="steps steps-alt" style="margin-top:32px;">
+
+      <div class="step">
+        <h3>Co dostajesz</h3>
+        <p>Pełny dostęp do Copilot, Chat na danych firmowych oraz agenci AI. 30 dni bez zobowiązań.</p>
+      </div>
+
+      <div class="step">
+        <h3>Jak to działa</h3>
+        <p>Start bez karty kredytowej, wdrożenie w Twoim środowisku i pełna kontrola administratora.</p>
+      </div>
+
+      <div class="step">
+        <h3>Dlaczego warto</h3>
+        <p>Sprawdzisz realną wartość Copilot – bez ryzyka i z pełną kontrolą danych.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
       <section id="process" class="section">
         <div class="process">
           <div class="section-heading" style="text-align:left;max-width:780px;margin:0;">
             <div class="eyebrow" style="color:rgba(255,255,255,.48)">Jak pracujemy</div>
-            <h2 style="margin-top:12px">Prosty proces, szybki start, bez zbędnej komplikacji</h2>
-            <p style="margin-top:16px">Ten model jest celowo prosty. Dobrze sprzedaje się do SMB, łatwo go wycenić i łatwo pokazać wartość już na pierwszej rozmowie.</p>
+            <h2 style="margin-top:12px">Szybki start bez komplikacji</h2>
+            <p style="margin-top:16px">Od pierwszej rozmowy pokazujemy konkret – co wdrożyć i jaki będzie efekt w Twojej firmie.</p>
           </div>
 
           <div class="steps">
@@ -573,8 +653,8 @@
 
       <section class="two-col">
         <div class="glass">
-          <div class="eyebrow-red">Co zyskuje klient</div>
-          <h2 style="margin:12px 0 0;font-size:46px;line-height:1.05;font-weight:900;letter-spacing:-.04em">Oferta, którą łatwo zrozumieć i łatwo kupić</h2>
+          <div class="eyebrow-red">Co zyskujesz jako Klient</div>
+          <h2 style="margin:12px 0 0;font-size:46px;line-height:1.05;font-weight:900;letter-spacing:-.04em">Oferta bez zbędnej komplikacji – rozumiesz ją od razu i możesz szybko podjąć decyzję o wdrożeniu.</h2>
           <div class="outcomes-grid">
             <div class="outcome">mniej pracy ręcznej</div>
             <div class="outcome">bezpieczne użycie AI</div>
@@ -587,15 +667,17 @@
 
         <div class="glass cta-panel">
           <div class="eyebrow-red">Dobre CTA</div>
-          <h2 style="margin:12px 0 0;font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.04em">Nie „skontaktuj się”.<br>Tylko konkretny następny krok.</h2>
-          <p class="desc" style="font-size:18px">Dla tego typu oferty najlepiej działa krótki audyt lub szybka wycena. To proste do kliknięcia i nie buduje oporu po stronie klienta.</p>
+          <h2 style="margin:12px 0 0;font-size:40px;line-height:1.05;font-weight:900;letter-spacing:-.04em">Sprawdź, jak Copilot może działać w Twojej firmie.<br>Bez zobowiązań. Bez zgadywania.</h2>
+          <p class="desc" style="font-size:18px">W ciągu kilku minut zobaczysz, jak wygląda wdrożenie i jaka będzie realna wycena.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:biuro@redflag.com.pl?subject=AI%20Security%20Upgrade%20%E2%80%93%20audyt&body=Dzie%C5%84%20dobry%2C%0A%0Aprosz%C4%99%20o%20bezp%C5%82atny%20audyt%20AI%20i%20bezpiecze%C5%84stwa%20dla%20naszej%20firmy.%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%0AObecne%20licencje%20Microsoft%20365%3A%0A%0APozdrawiam">Zamów bezpłatny audyt</a>
-            <a class="btn btn-secondary" href="mailto:biuro@redflag.com.pl?subject=AI%20Security%20Upgrade%20%E2%80%93%20wycena&body=Dzie%C5%84%20dobry%2C%0A%0Aprosz%C4%99%20o%20wycen%C4%99%20us%C5%82ugi%20AI%20%2B%20Security%20Upgrade.%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%0AObecne%20licencje%20Microsoft%20365%3A%0AOczekiwany%20zakres%3A%0A%0APozdrawiam">Poproś o wycenę</a>
+            <a class="btn btn-primary" href="mailto:biuro@redflag.com.pl?subject=AI%20Security%20Upgrade%20%E2%80%93%20wycena&body=Dzie%C5%84%20dobry%2C%0A%0Aprosz%C4%99%20o%20wycen%C4%99%20us%C5%82ugi%20AI%20%2B%20Security%20Upgrade.%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%0AObecne%20licencje%20Microsoft%20365%3A%0AOczekiwany%20zakres%3A%0A%0APozdrawiam">Sprawdź szybką wycenę</a>
+            <a class="btn btn-secondary" href="mailto:biuro@redflag.com.pl?subject=AI%20Security%20Upgrade%20%E2%80%93%20audyt&body=Dzie%C5%84%20dobry%2C%0A%0Aprosz%C4%99%20o%20bezp%C5%82atny%20audyt%20AI%20i%20bezpiecze%C5%84stwa%20dla%20naszej%20firmy.%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%0AObecne%20licencje%20Microsoft%20365%3A%0A%0APozdrawiam">Zamów krótki audyt</a>
           </div>
         </div>
       </section>
     </main>
+
+    
 
     <footer id="kontakt">
       <div class="footer-inner">
@@ -606,8 +688,8 @@
           <div style="margin-top:8px;font-size:14px;color:rgba(255,255,255,.55)">Microsoft 365 • AI • Security • Backup</div>
         </div>
         <div class="footer-meta">
-          <div>Plac Europejski 2, 00-844 Warszawa</div>
-          <div><a href="mailto:biuro@redflag.com.pl">biuro@redflag.com.pl</a></div>
+          <div>Olbrachta 112, 00-373 Warszawa</div>
+          <div><a href="mailto:biuro@redflag.com.pl?subject=AI%20Security%20Upgrade%20%E2%80%93%20wycena&body=Dzie%C5%84%20dobry%2C%0A%0Aprosz%C4%99%20o%20wycen%C4%99%20us%C5%82ugi%20AI%20%2B%20Security%20Upgrade.%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%0AObecne%20licencje%20Microsoft%20365%3A%0AOczekiwany%20zakres%3A%0A%0APozdrawiam">biuro@redflag.com.pl</a></div>
           <div><a href="https://redflag.tech" target="_blank" rel="noreferrer">redflag.tech</a></div>
         </div>
       </div>
