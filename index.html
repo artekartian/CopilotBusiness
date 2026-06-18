@@ -14,13 +14,7 @@
     scroll-padding-top: 64px; /* wysokość Twojego fixed header */
     }
 
-    /* dodatkowo dla pewności */
-    section{
-    scroll-margin-top: 64px;
-    }
-
-
-    :root{
+      :root{
       /* Copilot / Microsoft vibe */
       --bg0:#070A11;
       --bg1:#0B1224;      
@@ -51,13 +45,31 @@
       margin:0;
       color:var(--text);
       font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(66,232,224,.14), transparent 55%),
-        radial-gradient(1200px 700px at 85% 15%, rgba(91,140,255,.12), transparent 55%),
-        radial-gradient(900px 600px at 60% 85%, rgba(180,76,255,.12), transparent 58%),
-        linear-gradient(180deg,var(--bg0),var(--bg1));
+      background: linear-gradient(180deg,var(--bg0),var(--bg1));
+      min-height: 100vh;
       overflow-x:hidden;
     }
+
+    body{
+  background: linear-gradient(180deg,var(--bg0),var(--bg1));
+  min-height: 100vh;
+}
+
+body::before{
+  content: "";
+  position: fixed;        /* ← KLUCZ: gradient NIE przewija się z sekcjami */
+  inset: 0;
+  background:
+    radial-gradient(900px 600px at 20% 30%, rgba(66,232,224,.07), transparent 60%),
+    radial-gradient(900px 600px at 80% 70%, rgba(180,76,255,.07), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > *{
+  position: relative;
+  z-index: 1;
+}
 
     a{color:inherit}
     .wrap{width:min(1140px,92vw); margin:0 auto;}
@@ -120,7 +132,7 @@
         radial-gradient(600px 200px at 80% 15%, rgba(91,140,255,.18), transparent 50%),
         radial-gradient(600px 200px at 70% 85%, rgba(180,76,255,.16), transparent 55%);
       filter: blur(14px);
-      opacity:.75;
+      opacity:.35;
       pointer-events:none;
     }
     .glass > *{ position:relative; }
@@ -231,12 +243,8 @@
     }
 
     /* Sections */
-    section{padding: 34px 0;}
-    .section-head h2{
-      margin: 0 0 8px;
-      font-size: 26px;
-      letter-spacing: -.02em;
-    }
+    section{padding: 34px 0;position: relative;}
+
     .intro{margin:0; color: var(--muted); max-width: 82ch;}
     .divider{
       border: none;
@@ -244,6 +252,12 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
       margin: 18px 0 16px;
     }
+
+       .section-head h2{
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: -.02em;
+   }
 
     .grid{display:grid; gap: 14px;}
     .cols-3{grid-template-columns: repeat(3, 1fr);}
@@ -1218,6 +1232,211 @@ body.no-scroll{ overflow: hidden; }
 }
 
 
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.brandline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CERTYFIKAT */
+.cert-box {
+  display: grid;
+  gap: 32px;
+  padding: 18px;
+  align-items: flex-start;
+  grid-template-columns: 194px 1fr;
+  align-items: center;
+}
+
+.cert-logo {
+  width: 164px;
+  object-fit: contain;
+  justify-self: center;
+  align-self: start;
+  margin-top: 6px;
+}
+
+.cert-left {
+  display: flex;
+  justify-content: center;   /* poziomo */
+}
+
+
+.cert-right h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+
+.cert-lead {
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.75);
+  font-size: 14px;
+  max-width: 60ch;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cert-pill {
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  text-align: center;
+  color: rgba(255,255,255,.75);
+}
+
+@media (max-width: 900px){
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px){
+  .cert-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cert-left {
+    display:flex;
+    justify-content:center;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   NUKE: reset wszystkich gradientów sekcji
+   ======================================== */
+
+/* 1. BODY — czyste, ciemne tło, bez gradientów */
+html, body {
+  background: #0a0f1e !important;
+}
+
+/* 2. WSZYSTKIE sekcje — bez własnego tła, bez glow, bez maski */
+section,
+section::before,
+section::after,
+#hero, #hero::before,
+#how, #how::before,
+#deploy, #deploy::before,
+#cert-ai, #cert-ai::before,
+#faq, #faq::before,
+#contact, #contact::before {
+  background: transparent !important;
+  -webkit-mask-image: none !important;
+          mask-image: none !important;
+  filter: none !important;
+}
+
+section::before,
+section::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 3. JEDEN gradient na całej stronie — fixed, nieprzerywany */
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(1000px 700px at 20% 25%, rgba(66,232,224,.08), transparent 60%),
+    radial-gradient(1000px 700px at 80% 70%, rgba(180,76,255,.08), transparent 60%),
+    radial-gradient(900px 600px at 50% 50%, rgba(91,140,255,.05), transparent 65%)
+    !important;
+}
+
+/* 4. Treść strony nad gradientem */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 5. Karty zostają jak były — tylko bez własnego glow który robił bałagan */
+.glass::before {
+  opacity: .25 !important;
+}
+
+/* Badge "Najpopularniejszy" — więcej przestrzeni od góry */
+.pricing-card {
+  overflow: visible;  /* żeby ribbon mógł "wystawać" nad kartę */
+}
+
+.pricing-card .ribbon {
+  top: -16px;          /* było ~0 → unosi się nad kartą */
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow: 0 6px 18px rgba(180,76,255,.25);
+  z-index: 3;
+}
+
+/* Siatka cenników potrzebuje miejsca na unoszący się ribbon */
+.pricing-grid,
+.cards,
+.grid {
+  padding-top: 18px;
+  padding-bo: 18px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  margin: 28px 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.12) 20%,
+    rgba(255,255,255,.18) 50%,
+    rgba(255,255,255,.12) 80%,
+    transparent 100%
+  );
+}
+
+/* Powiększ tekst w tabeli porównawczej */
+#difference-toggle-v2 .v2-cell {
+  font-size: 15.5px;      /* było 13.5px */
+  padding: 14px 14px;     /* było 11px 12px → więcej powietrza */
+  gap: 12px;
+}
+
+/* Ikony obok tekstu — proporcjonalnie większe */
+#difference-toggle-v2 .v2-row-ico svg,
+#difference-toggle-v2 .v2-cell svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Nagłówek "OBSZAR / COPILOT" — lekko powiększony dla balansu */
+#difference-toggle-v2 .v2-row-head .v2-cell {
+  font-size: 13px;        /* było 12.5px */
+  padding: 12px 14px;
+}
+
+/* TAK / NIE — większy badge żeby się nie gubił */
+#difference-toggle-v2 .v2-ans .yn {
+  min-width: 68px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
 
   </style>
 </head>
@@ -2356,6 +2575,55 @@ body.no-scroll{ overflow: hidden; }
 
       </div>
     </section>
+
+<section id="cert-ai">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pracujemy z agentową AI w praktyce</h2>
+      <p class="intro">
+        Budujemy realne zastosowania AI dla firm.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="card glass cert-box">
+
+      <div class="cert-left">
+        <img src="cert.png" alt="AI Heroes 2026" class="cert-logo">
+      </div>
+
+      <div class="cert-right">
+        <h3>AI Heroes 2026 – agenci AI</h3>
+
+        <p class="cert-lead">
+          Ukończona ścieżka wdrożeniowa: od identyfikacji przypadków użycia
+          po budowę i skalowanie agentów AI w firmie.
+        </p>
+
+        <div class="cert-grid">
+          <div class="cert-pill">Use‑case AI w firmie</div>
+          <div class="cert-pill">Copilot Studio</div>
+          <div class="cert-pill">Agenci Microsoft</div>
+          <div class="cert-pill">Azure AI Foundry</div>
+          <div class="cert-pill">GitHub Copilot</div>
+          <div class="cert-pill">Architektura i skalowanie</div>
+        </div>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn-primary"
+             target="_blank"
+             rel="noopener"
+             href="https://my.credentium.com/credentials/fb583c89-466d-5c9e-9f22-81abde54487b">
+            Zobacz certyfikat
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- CONTACT (big) -->
     <section class="contact-section" id="kontakt">
